@@ -6,7 +6,7 @@ const CategoryList = async () => {
 
   return (
     <>
-      <div className="flex gap-3 overflow-x-scroll">
+      <div className="no-scrollbar flex gap-3 overflow-x-scroll">
         {categories.map((category) => (
           <CategoryItem key={category.id} category={category} />
         ))}

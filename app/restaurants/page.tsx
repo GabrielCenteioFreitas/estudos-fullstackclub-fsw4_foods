@@ -11,7 +11,7 @@ const Restaurants = () => {
   const searchParams = useSearchParams();
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
-  const searchFor = searchParams.get("searchFor");
+  const searchFor = searchParams.get("search");
 
   useEffect(() => {
     const fetchRestaurants = async () => {

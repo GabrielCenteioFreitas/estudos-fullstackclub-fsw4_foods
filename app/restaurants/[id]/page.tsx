@@ -96,8 +96,8 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
           ))}
         </div>
 
-        <div className="mt-6 space-x-4">
-          <h2 className="font-semimold px-5">Mais pedidos</h2>
+        <div className="mt-6 space-y-4">
+          <h2 className="px-5 font-semibold">Mais pedidos</h2>
 
           <ProductList products={restaurant.products} />
         </div>

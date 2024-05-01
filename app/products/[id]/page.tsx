@@ -19,10 +19,18 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
       category: true,
     },
   });
+
+  if (!product) {
+    return notFound();
+  }
+
   const complementaryProducts = await db.product.findMany({
     where: {
       category: {
         name: product?.category.name,
+      },
+      restaurant: {
+        name: product?.restaurant.name,
       },
     },
     include: {
@@ -30,10 +38,6 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
       category: true,
     },
   });
-
-  if (!product) {
-    return notFound();
-  }
 
   return (
     <div>

@@ -42,12 +42,16 @@ const Cart = () => {
 
                 <Separator />
 
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-muted-foreground">Descontos</span>
-                  <span>- {formatCurrency(totalDiscounts)}</span>
-                </div>
+                {totalDiscounts > 0 && (
+                  <>
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-muted-foreground">Descontos</span>
+                      <span>- {formatCurrency(totalDiscounts)}</span>
+                    </div>
 
-                <Separator />
+                    <Separator />
+                  </>
+                )}
 
                 <div className="flex items-center justify-between text-xs font-semibold">
                   <span>Total</span>

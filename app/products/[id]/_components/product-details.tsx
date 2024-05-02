@@ -110,16 +110,16 @@ const ProductDetails = ({
         <h1 className="mb-3 mt-1 px-5 text-xl font-semibold">{product.name}</h1>
 
         <div className="flex justify-between px-5">
-          <div>
+          <div className="flex flex-col justify-center">
             <div className="flex items-center gap-2">
               <h2 className="text-xl font-semibold">
                 {formatCurrency(calculateProductTotalPrice(product))}
               </h2>
-              {product.discountPercentage && (
+              {product.discountPercentage > 0 && (
                 <DiscountBadge product={product} />
               )}
             </div>
-            {product.discountPercentage && (
+            {product.discountPercentage > 0 && (
               <p className="text-sm text-muted-foreground">
                 De: {formatCurrency(Number(product.price))}
               </p>

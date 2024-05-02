@@ -29,7 +29,7 @@ const Home = async () => {
   return (
     <>
       <Header />
-      <div className="space-y-6">
+      <div className="mt-6 space-y-6">
         <div className="px-5">
           <Search />
         </div>

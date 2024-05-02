@@ -5,6 +5,7 @@ import Image from "next/image";
 import { StarIcon } from "lucide-react";
 import DeliveryInfo from "@/app/_components/delivery-info";
 import ProductList from "@/app/_components/product-list";
+import CartBanner from "./_components/cart-banner";
 
 interface RestaurantPageProps {
   params: {
@@ -55,10 +56,10 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
   }
 
   return (
-    <div>
+    <>
       <RestaurantImage restaurant={restaurant} />
 
-      <div className="relative z-50 -mt-6 rounded-t-3xl bg-white py-5">
+      <div className="relative z-10 -mt-6 rounded-t-3xl bg-white py-5">
         <div className="flex items-center justify-between px-5">
           <div className="flex items-center gap-1.5">
             <div className="relative h-8 w-8">
@@ -110,7 +111,9 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
           </div>
         ))}
       </div>
-    </div>
+
+      <CartBanner restaurant={restaurant} />
+    </>
   );
 };
 

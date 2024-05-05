@@ -58,7 +58,7 @@ const Header = () => {
           </SheetHeader>
 
           {data?.user ? (
-            <div className="flex items-center gap-3">
+            <div className="mt-6 flex items-center gap-3">
               <Avatar>
                 <AvatarImage src={data?.user?.image as string | undefined} />
                 <AvatarFallback>
@@ -89,6 +89,7 @@ const Header = () => {
             <Button
               variant="ghost"
               className="w-full justify-start space-x-3 rounded-full text-sm font-normal"
+              asChild
             >
               <Link href="/">
                 <HomeIcon size={16} />

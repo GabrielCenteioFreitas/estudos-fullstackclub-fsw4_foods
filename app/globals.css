@@ -56,10 +56,6 @@
   body {
     @apply text-foreground antialiased;
   }
-
-  body * {
-    @apply font-Poppins
-  }
 }
 
 @layer utilities {

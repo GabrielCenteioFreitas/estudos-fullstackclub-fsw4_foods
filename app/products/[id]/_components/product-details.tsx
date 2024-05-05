@@ -62,7 +62,10 @@ const ProductDetails = ({
   }: {
     shouldCartBeEmptied?: boolean;
   }) => {
-    addProductToCart({ product, quantity, shouldCartBeEmptied });
+    addProductToCart({
+      product: { ...product, quantity },
+      shouldCartBeEmptied,
+    });
     setIsCartOpen(true);
   };
 

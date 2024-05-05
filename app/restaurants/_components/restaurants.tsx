@@ -1,16 +1,17 @@
 "use client";
 
-import { Restaurant } from "@prisma/client";
+import { Restaurant, UserFavoriteRestaurants } from "@prisma/client";
 import { notFound, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { searchForRestaurant } from "../_actions/search";
 import Header from "@/app/_components/header";
 import RestaurantItem from "@/app/_components/restaurant-item";
-import { db } from "@/app/_lib/prisma";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/_lib/auth";
 
-const Restaurants = async () => {
+interface RestaurantProps {
+  userFavoriteRestaurants: UserFavoriteRestaurants[];
+}
+
+const Restaurants = ({ userFavoriteRestaurants }: RestaurantProps) => {
   const searchParams = useSearchParams();
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
@@ -30,16 +31,6 @@ const Restaurants = async () => {
   if (!searchFor) {
     return notFound();
   }
-
-  const session = await getServerSession(authOptions);
-
-  const userFavoriteRestaurants = session
-    ? await db.userFavoriteRestaurants.findMany({
-        where: {
-          userId: session?.user.id,
-        },
-      })
-    : [];
 
   return (
     <>

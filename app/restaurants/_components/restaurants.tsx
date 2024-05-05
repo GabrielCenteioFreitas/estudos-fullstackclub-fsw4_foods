@@ -6,8 +6,11 @@ import { useEffect, useState } from "react";
 import { searchForRestaurant } from "../_actions/search";
 import Header from "@/app/_components/header";
 import RestaurantItem from "@/app/_components/restaurant-item";
+import { db } from "@/app/_lib/prisma";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/_lib/auth";
 
-const Restaurants = () => {
+const Restaurants = async () => {
   const searchParams = useSearchParams();
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
@@ -28,6 +31,16 @@ const Restaurants = () => {
     return notFound();
   }
 
+  const session = await getServerSession(authOptions);
+
+  const userFavoriteRestaurants = session
+    ? await db.userFavoriteRestaurants.findMany({
+        where: {
+          userId: session?.user.id,
+        },
+      })
+    : [];
+
   return (
     <>
       <Header />
@@ -39,6 +52,7 @@ const Restaurants = () => {
               key={restaurant.id}
               restaurant={restaurant}
               className="min-w-full max-w-full"
+              userFavoriteRestaurants={userFavoriteRestaurants}
             />
           ))}
         </div>

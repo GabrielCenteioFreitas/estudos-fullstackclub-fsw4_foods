@@ -30,8 +30,8 @@ const Header = () => {
 
   return (
     <div className="flex justify-between px-5 pt-6">
-      <div>
-        <Link href="/" className="relative h-[30px] w-[100px]">
+      <div className="relative h-[30px] w-[100px]">
+        <Link href="/">
           <Image
             src="/logo.png"
             alt="FSW Foods"

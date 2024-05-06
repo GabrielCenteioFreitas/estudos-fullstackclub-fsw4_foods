@@ -39,12 +39,14 @@
 <br>
 
 <div align="center">
-  <img alt="Preview do projeto desenvolvido." src=".github/preview01.png" width="20%">
-  <img alt="Preview do projeto desenvolvido." src=".github/preview02.png" width="20%">
-  <img alt="Preview do projeto desenvolvido." src=".github/preview03.png" width="20%">
-  <img alt="Preview do projeto desenvolvido." src=".github/preview04.png" width="20%">
-  <img alt="Preview do projeto desenvolvido." src=".github/preview05.png" width="20%">
-  <img alt="Preview do projeto desenvolvido." src=".github/preview06.png" width="20%">
+  <img alt="Preview do projeto desenvolvido." src=".github/preview01.png" width="33%">
+  <img alt="Preview do projeto desenvolvido." src=".github/preview02.png" width="33%">
+  <img alt="Preview do projeto desenvolvido." src=".github/preview03.png" width="33%">
+</div>
+<div align="center">
+  <img alt="Preview do projeto desenvolvido." src=".github/preview04.png" width="33%">
+  <img alt="Preview do projeto desenvolvido." src=".github/preview05.png" width="33%">
+  <img alt="Preview do projeto desenvolvido." src=".github/preview06.png" width="33%">
 </div>
 
 <h4 align="center">
